@@ -6,13 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
 
     protected Joystick joystick;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         var rigidbody = GetComponent<Rigidbody>();
