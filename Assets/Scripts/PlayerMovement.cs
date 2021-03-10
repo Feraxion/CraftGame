@@ -16,6 +16,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         var rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = new Vector3(joystick.Horizontal * 100, rigidbody.velocity.y, joystick.Vertical * 100f);
+        rigidbody.velocity = new Vector3(joystick.Horizontal * 5f, rigidbody.velocity.y, joystick.Vertical * 5f);
     }
 }
