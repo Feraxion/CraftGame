@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Building
-  - WhatIsGround
-  - WhatIsWall
+  - Mine
   layers:
   - Default
   - TransparentFX
