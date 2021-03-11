@@ -6,6 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [Header("Mine UI System")]
     [SerializeField] GameObject mineNumPrefab;
     [SerializeField] public int mines;
     [SerializeField] TMP_Text minesCount;
@@ -14,7 +15,6 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("Mine"))
         {
-
             mines++;
             Destroy(col.gameObject);
             minesCount.text = mines.ToString();
