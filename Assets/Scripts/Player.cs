@@ -7,7 +7,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     [Header("Mine UI System")]
-    [SerializeField] GameObject mineNumPrefab;
+   // [SerializeField] GameObject mineNumPrefab;  ------> IF WE ADD VISUAL SYSTEM WE WILL NEED THIS CODE 
     [SerializeField] public int mines;
     [SerializeField] TMP_Text minesCount;
 
