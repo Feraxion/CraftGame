@@ -8,16 +8,18 @@ public class Player : MonoBehaviour
 {
     [Header("Mine UI System")]
    // [SerializeField] GameObject mineNumPrefab;  ------> IF WE ADD VISUAL SYSTEM WE WILL NEED THIS CODE 
-    [SerializeField] public int mines;
-    [SerializeField] TMP_Text minesCount;
+    [SerializeField] TMP_Text oresCount;
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Mine"))
+        if (col.CompareTag("Ore"))
         {
-            mines++;
+            GameDataSaver.oreAmount++;
             Destroy(col.gameObject);
-            minesCount.text = mines.ToString();
+            oresCount.text = GameDataSaver.oreAmount.ToString();
+            
+            
+
 
             //Adding mine visual system
         }
