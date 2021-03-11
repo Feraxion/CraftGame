@@ -45,6 +45,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Patroling()
     {
+
+        //SET DESTINATION TO BUILD 
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -79,6 +81,8 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
+        
+        //TAKE ATTACK and HEALTH STATS FROM CHARACTER CLASS
 
         //if (!alreadyAttacked)
         //{
