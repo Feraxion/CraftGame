@@ -9,7 +9,9 @@ public class GameDataSaver : MonoBehaviour
     //OYUN BASINDA VARIABLELAR BURADAN ALINIYOR KAYIT EDILDI ISE, EDILMEDIYSE DEFAULT VALUE 0
     public static void GetData()
     {
-        oreAmount = PlayerPrefs.GetInt("oreAmount", 0);
+        oreAmount = PlayerPrefs.GetInt("oreAmount", 1);
+        stoneMineLevel = PlayerPrefs.GetInt("stoneMineLevel", 1);
+
     }
     
     //DOKUNMA////////////////////////
@@ -25,9 +27,15 @@ public class GameDataSaver : MonoBehaviour
     }
 
     //YENI VARIABLELAR
+    
     public static int oreAmount;
-    
-    
+    public static int stoneMineLevel;
+
+    private void Awake()
+    {
+        GetData();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +46,8 @@ public class GameDataSaver : MonoBehaviour
     {
         //Yeni variablelar burada kaydediliyor
         PlayerPrefs.SetInt("oreAmount",oreAmount);
+        PlayerPrefs.SetInt("stoneMineLevel",stoneMineLevel);
+
         PlayerPrefs.Save();
         
     }    
