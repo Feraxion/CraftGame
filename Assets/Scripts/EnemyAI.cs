@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public StatSystem statSystem;
     public GameObject gameOverScreen;
-
+    public Animator animator;
     public LayerMask whatIsGround, whatIsPlayer;
 
 
@@ -107,7 +107,8 @@ public class EnemyAI : MonoBehaviour
 
         if (statSystem.playerHealth <= 0)
         {
-            gameOverScreen.SetActive(true);
+            animator.SetFloat("Health", statSystem.playerHealth);
+           // gameOverScreen.SetActive(true);
         }
         
         //if (!alreadyAttacked)
