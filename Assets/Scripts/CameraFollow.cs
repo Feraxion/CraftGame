@@ -10,6 +10,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]private float offsetY;
 
     [SerializeField]private float offsetZ;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,15 @@ public class CameraFollow : MonoBehaviour
             camPos.z += offsetZ;
 
 
-            transform.position = camPos;}
+            transform.position = camPos;
+            
+            
+            
+        }
+        
+        
+        
     }
+    
+    
 }
