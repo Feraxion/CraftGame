@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.velocity = new Vector3(joystick.Horizontal * 5f, rigidbody.velocity.y, joystick.Vertical * 5f);
 
         // that code useful for character rotation
-        // rigidbody.rotation = rigidbody.rotation * Quaternion.AngleAxis(joystick.Horizontal * 5f, Vector3.forward);  // PIVOT ISSUE - AFTER SOLVE IT OPEN THAT CODE
+        rigidbody.rotation = rigidbody.rotation * Quaternion.AngleAxis(joystick.Horizontal * 5f, Vector3.forward);  // PIVOT ISSUE - AFTER SOLVE IT OPEN THAT CODE
         animator.SetFloat("Speed", Mathf.Abs(joystick.Horizontal));
     }
 }
