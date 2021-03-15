@@ -1,17 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 
     public Transform player;
+    public StatSystem statSystem;
+    public GameObject gameOverScreen;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
 
     //Patroling
     public Vector3 walkPoint;
@@ -41,6 +46,16 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            TakeDamage();
+        }
     }
 
     private void Patroling()
@@ -82,8 +97,19 @@ public class EnemyAI : MonoBehaviour
 
         transform.LookAt(player);
         
+        
+        
         //TAKE ATTACK and HEALTH STATS FROM CHARACTER CLASS
 
+        //playAnimation;
+        
+        statSystem.playerHealth -= statSystem.enemyDamage;
+
+        if (statSystem.playerHealth <= 0)
+        {
+            gameOverScreen.SetActive(true);
+        }
+        
         //if (!alreadyAttacked)
         //{
         //    ///Attack code here
@@ -98,21 +124,18 @@ public class EnemyAI : MonoBehaviour
 
         Debug.Log("Atak yapıyor");
     }
-    private void ResetAttack()
-    {
-        alreadyAttacked = false;
-    }
 
-    public void TakeDamage(int damage)
+    private void TakeDamage()
     {
-        health -= damage;
+        statSystem.enemyHealth -= statSystem.PlayerDamage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (statSystem.enemyHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
-    }
+    
+   
 
     private void OnDrawGizmosSelected()
     {

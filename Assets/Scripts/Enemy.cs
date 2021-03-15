@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private HealthSystem healthSystem;
 
     private void Start() {
         

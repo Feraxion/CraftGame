@@ -11,6 +11,9 @@ public class GameDataSaver : MonoBehaviour
     {
         oreAmount = PlayerPrefs.GetInt("oreAmount", 1);
         stoneMineLevel = PlayerPrefs.GetInt("stoneMineLevel", 1);
+        currentZoneLevel = PlayerPrefs.GetInt("currentZoneLevel", 1);
+        forgeAttackLevel = PlayerPrefs.GetInt("forgeAttackLevel", 1);
+        forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1);
 
     }
     
@@ -30,6 +33,11 @@ public class GameDataSaver : MonoBehaviour
     
     public static int oreAmount;
     public static int stoneMineLevel;
+    public static int currentZoneLevel;
+    public static int forgeAttackLevel,forgeHealthLevel;
+
+
+
 
     private void Awake()
     {
@@ -47,6 +55,10 @@ public class GameDataSaver : MonoBehaviour
         //Yeni variablelar burada kaydediliyor
         PlayerPrefs.SetInt("oreAmount",oreAmount);
         PlayerPrefs.SetInt("stoneMineLevel",stoneMineLevel);
+        PlayerPrefs.SetInt("currentZoneLevel",currentZoneLevel);
+        PlayerPrefs.SetInt("forgeAttackLevel",forgeAttackLevel);
+        PlayerPrefs.SetInt("forgeHealthLevel",forgeHealthLevel);
+
 
         PlayerPrefs.Save();
         
