@@ -15,7 +15,8 @@ public class EnemyAI : MonoBehaviour
     public StatSystem statSystem;
     public GameObject gameOverScreen;
     public LayerMask whatIsGround, whatIsPlayer;
-
+    public Animator animator;
+    public float health;
 
     //Patroling
     public Vector3 walkPoint;
@@ -38,6 +39,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        health = statSystem.enemyHealth;
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -49,13 +51,13 @@ public class EnemyAI : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            TakeDamage();
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        TakeDamage();
+    //    }
+    //}
 
     private void Patroling()
     {
@@ -71,6 +73,7 @@ public class EnemyAI : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+        animator.SetFloat("Speed", 1);
     }
     private void SearchWalkPoint()
     {
@@ -87,6 +90,7 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        animator.SetFloat("Speed", 1);
     }
 
     private void AttackPlayer()
@@ -95,12 +99,13 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
-        
-        
-        
+
+
+
         //TAKE ATTACK and HEALTH STATS FROM CHARACTER CLASS
 
         //playAnimation;
+        animator.SetBool("IsAttack", true);
         
         statSystem.playerHealth -= statSystem.enemyDamage;
 
@@ -127,6 +132,7 @@ public class EnemyAI : MonoBehaviour
 
         if (statSystem.enemyHealth <= 0)
         {
+            animator.SetFloat("Health", statSystem.enemyHealth);
             Destroy(this.gameObject);
         }
     }
