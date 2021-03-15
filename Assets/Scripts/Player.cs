@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     //States
     public float interactionRange;
     public bool playerInInteractionRange;
-    
+    public PlayerMovement playerMovement;
     public LayerMask whatIsEnemy;
     
     private float lookForTargetTimer;
@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
    private void Start()
    {
        InvokeRepeating("TextUpdater",1,0.3F);
+       playerMovement = gameObject.GetComponent<PlayerMovement>();
    }
 
    
@@ -49,6 +50,14 @@ public class Player : MonoBehaviour
        HandleTargeting();
        HandleShooting();
 
+       
+       if (statSystem.playerHealth <= 0)
+       {
+           statSystem.playerHealth = 0;
+           playerMovement.animator.SetFloat("Health", statSystem.playerHealth);
+            
+           // gameOverScreen.SetActive(true);
+       }
    }
    
    private void TextUpdater()
