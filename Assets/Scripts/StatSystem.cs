@@ -12,22 +12,36 @@ public class StatSystem : MonoBehaviour
     public float enemyDamage, PlayerDamage;
     public int coinDropAmount;
 
-    private void Awake()
+    public int PlayerHealthModifier;
+    public int EnemyHealthModifier;
+    
+
+    public void Awake()
+    {
+    
+       
+    }
+
+
+    private void Start()
     {
         CalculateStats();
+
     }
+
 
     void CalculateStats()
     {
-        playerHealth = 100 + (GameDataSaver.forgeHealthLevel * 10);
+        playerHealth = 10000 + (GameDataSaver.forgeHealthLevel * PlayerHealthModifier);
         playerAttack = 10 + (GameDataSaver.forgeAttackLevel * 5);
 
         enemyAttack = 10 + (GameDataSaver.forgeHealthLevel * 8);
-        enemyHealth = 10 + (GameDataSaver.forgeAttackLevel * 8);
+        enemyHealth = 10 + (GameDataSaver.forgeAttackLevel * EnemyHealthModifier);
 
         enemyDamage = Random.Range(enemyAttack -5, enemyAttack + 5);
         enemyHealth = Random.Range(enemyHealth -5, enemyHealth + 5);
 
+        
     }
 
     void DropsCalculator()

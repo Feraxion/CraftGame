@@ -17,7 +17,9 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
     public Animator animator;
     public float health;
-
+    private float shootTimer;
+    [SerializeField] private float shootTimerMax;
+    
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -48,7 +50,11 @@ public class EnemyAI : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
         
-        
+        if (!playerInAttackRange)
+        {
+            animator.SetBool("IsAttack", false);
+            
+        }
     }
 
     //private void OnCollisionEnter(Collision other)
@@ -91,6 +97,8 @@ public class EnemyAI : MonoBehaviour
     {
         agent.SetDestination(player.position);
         animator.SetFloat("Speed", 1);
+        
+       
     }
 
     private void AttackPlayer()
@@ -100,14 +108,29 @@ public class EnemyAI : MonoBehaviour
 
         transform.LookAt(player);
 
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0f)
+        {
+            shootTimer += shootTimerMax;
+            if (playerInAttackRange)
+            {
+                //ATTACK KODU PLAYER ICIN
+                //playAnimation;
+                animator.SetBool("IsAttack", true);
+                //animator.Play("SwordAndShieldSlash");
+                statSystem.playerHealth = statSystem.playerHealth - statSystem.enemyDamage;
+                Debug.Log("Atak yapıyor");
 
+
+            }
+        }
+
+        
 
         //TAKE ATTACK and HEALTH STATS FROM CHARACTER CLASS
 
-        //playAnimation;
-        animator.SetBool("IsAttack", true);
         
-        statSystem.playerHealth -= statSystem.enemyDamage;
+        
 
         
         
@@ -123,7 +146,6 @@ public class EnemyAI : MonoBehaviour
         //    Invoke(nameof(ResetAttack), timeBetweenAttacks);
         //}
 
-        Debug.Log("Atak yapıyor");
     }
 
     private void TakeDamage()

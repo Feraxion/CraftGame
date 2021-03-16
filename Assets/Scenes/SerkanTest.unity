@@ -1592,15 +1592,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 169371581, guid: 027f6893ee51b1d44a1c26e3d5dfbf15, type: 3}
+      propertyPath: shatteredVersion
+      value: 
+      objectReference: {fileID: 394725531672615058, guid: da1a9a2d62620894ba19b7bfec3e9851,
+        type: 3}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 124.67999
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
@@ -2429,6 +2429,8 @@ MonoBehaviour:
   enemyDamage: 5
   PlayerDamage: 1
   coinDropAmount: 1
+  PlayerHealthModifier: 1000
+  EnemyHealthModifier: 1000
 --- !u!4 &763774401
 Transform:
   m_ObjectHideFlags: 0
@@ -9193,6 +9195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1610895659}
@@ -9204,7 +9211,12 @@ PrefabInstance:
     - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
       propertyPath: attackRange
-      value: 3
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: shootTimerMax
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
@@ -9250,15 +9262,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c441ceffd6852429b721c60e727b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 15
+  interactionRange: 4
   playerInInteractionRange: 0
   playerMovement: {fileID: 0}
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 1024
   shootTimerMax: 1
-  health: 100
   statSystem: {fileID: 763774400}
+  health: 0
   oresCount: {fileID: 78396750}
 --- !u!114 &5169735537352930556
 MonoBehaviour:

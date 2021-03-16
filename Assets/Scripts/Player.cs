@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     private Enemy targetEnemy;
     private MineableOre targetOre;
     
-    public float health;
     public StatSystem statSystem;
+    public float health;
     
 
     
@@ -43,9 +43,9 @@ public class Player : MonoBehaviour
 
    private void Update()
    {
+
+       //statSystem.playerHealth = health;
        health = statSystem.playerHealth;
-       
-       
        
        HandleTargeting();
        HandleShooting();
@@ -130,6 +130,8 @@ public class Player : MonoBehaviour
            // YAKINDAKI OBJELERDE YOKSA RANGE DISINDA ONCEDEN ALDIGI TARGETA TEKRAR DALMASIN 
            targetEnemy = null;
            targetOre = null;
+           playerMovement.animator.SetBool("IsAttack",false);
+
        }
    }
    
@@ -141,19 +143,25 @@ public class Player : MonoBehaviour
            shootTimer += shootTimerMax;
            if (targetEnemy != null) {
                
-                   Debug.Log("Bum Bum");
+                   Debug.Log("Player Atak");
                    //ATTACK KODU PLAYER ICIN
-
+                   playerMovement.animator.SetBool("IsAttack",true);
            }
 
            if (targetOre != null)
            {
+               playerMovement.animator.SetBool("IsAttack",true);
                Debug.Log("Mine Bum");
                //MINE KODU PLAYER ICIN
                targetOre.Shatter();
+                    
+
 
            }
        }
+       
+
+       
        
        
    }

@@ -13,7 +13,7 @@ public class GameDataSaver : MonoBehaviour
         stoneMineLevel = PlayerPrefs.GetInt("stoneMineLevel", 1);
         currentZoneLevel = PlayerPrefs.GetInt("currentZoneLevel", 1);
         forgeAttackLevel = PlayerPrefs.GetInt("forgeAttackLevel", 1);
-        forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1);
+        forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1000);
 
     }
     
