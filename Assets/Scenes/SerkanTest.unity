@@ -1946,6 +1946,7 @@ MonoBehaviour:
   maxOreLimit: 0
   timer: 0
   timerMax: 1
+  buildUI: {fileID: 1120593904}
   name: Stone Mine
   description: Mines Stone amk nolcak baska
   playerIsNear: 0

@@ -7,6 +7,7 @@ using TMPro;
 
 public class BuildUIDisplay : MonoBehaviour
 {
+    
     public StoneMillBuilding build;
 
     public TMP_Text nameText;
@@ -14,7 +15,6 @@ public class BuildUIDisplay : MonoBehaviour
     public TMP_Text ProductionPerMinText;
     //public TMP_Text currentStoredOreAmountText;
     public TMP_Text descriptionText;
-
     public TMP_Text coinCostButtonText;
     public TMP_Text adButtonText;
     
@@ -28,11 +28,11 @@ public class BuildUIDisplay : MonoBehaviour
         adButtonText.text = $"{build.upgradeWithAdCost} Coin + Watch AD";
         buildingLevelText.text = $"Level {build.buildingLevel}";
         
+        //Startta updatelenmeyebiliyor bazen ondan 4 saniye sonra safe cagiriyorum zaten upgradeleyince herhangi bir buildi cagiriyor bunu ve CostCalculationsi
         Invoke("UITextUpdater",4);
-
     }
 
-    void UITextUpdater()
+    public void UITextUpdater()
     {
         nameText.text = build.name;
         descriptionText.text = build.description;

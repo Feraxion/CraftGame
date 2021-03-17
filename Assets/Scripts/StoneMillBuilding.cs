@@ -8,7 +8,7 @@ public class StoneMillBuilding : MonoBehaviour
 
     public int maxOreLimit;
     public float timer,timerMax;
-    
+    public BuildUIDisplay buildUI;
     
     public new string name;
     public string description;
@@ -29,20 +29,19 @@ public class StoneMillBuilding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         buildingLevel = GameDataSaver.stoneMineLevel;
         currentStoredOreAmount = GameDataSaver.stoneMineStoredOreAmount;
-        productionPerMin = 120 * buildingLevel;
-
+       
+        
+        CostCalculations();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Uida gostermek icin
-        productionPerMin = 120 * buildingLevel;
-
-        
-        maxOreLimit = buildingLevel * 240;
+       
         
         //Ore generation
         timer -= Time.deltaTime;
@@ -63,7 +62,15 @@ public class StoneMillBuilding : MonoBehaviour
             GameDataSaver.oreAmount += currentStoredOreAmount;
             currentStoredOreAmount = 0;
         }
+    }
 
+    public void CostCalculations()
+    {
+        //Uida gostermek icin
+        productionPerMin = 120 * buildingLevel;
+        maxOreLimit = buildingLevel * 240;
+        
+        
         //Upgrade cost hesaplamasi
         upgradeCost = 40 * buildingLevel;
         upgradeWithAdCost = 30 * buildingLevel ;
@@ -80,7 +87,10 @@ public class StoneMillBuilding : MonoBehaviour
             buildingLevel++;
             Debug.Log("Upgrade Success");
             
+            CostCalculations();
         }else{Debug.Log("notEnoughCoin");}
+        
+        buildUI.UITextUpdater();
     }
     
     //Buttonlarin OnClickine atiyoruz
@@ -93,6 +103,10 @@ public class StoneMillBuilding : MonoBehaviour
             showAd = true;
             Debug.Log("Upgrade Success");
             
+            CostCalculations();
+            
         }else{Debug.Log("notEnoughCoin");}
+        buildUI.UITextUpdater();
+
     }
 }
