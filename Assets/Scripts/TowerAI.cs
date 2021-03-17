@@ -25,6 +25,7 @@ public class TowerAI : MonoBehaviour
     private void Update() {
         HandleTargeting();
         HandleShooting();
+        
     }
 
     private void HandleTargeting() {

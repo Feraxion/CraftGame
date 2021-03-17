@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(joystick.Horizontal));
         
+        
+        
 
     }
 }
