@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -152,6 +148,7 @@ public class Player : MonoBehaviour
 
     private void HandleShooting()
     {
+
         shootTimer -= Time.deltaTime;
         if (shootTimer <= 0f)
         {
@@ -160,14 +157,14 @@ public class Player : MonoBehaviour
             {
 
                 Debug.Log("Player Atak");
-                //ATTACK KODU PLAYER ICIN
                 animator.SetTrigger("Attack");
+                //ATTACK KODU PLAYER ICIN
                 // playerMovement.animator.SetBool("IsAttack",true);
             }
 
             if (targetOre != null)
             {
-                //Play an attack animation
+                //Play an attack animation    
                 animator.SetTrigger("Attack");
                 Debug.Log("Mine Bum");
                 //MINE KODU PLAYER ICIN
@@ -176,9 +173,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider col)
+
+    private void OnCollisionEnter(Collision col)
     {
-        if (col.CompareTag("ShatteredOre"))
+        if (col.gameObject.CompareTag("ShatteredOre"))
         {
             GameDataSaver.oreAmount++;
             Destroy(col.gameObject);
