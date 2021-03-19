@@ -56,7 +56,8 @@ public class Player : MonoBehaviour
         if (statSystem.playerHealth <= 0)
         {
             statSystem.playerHealth = 0;
-            playerMovement.animator.SetFloat("Health", statSystem.playerHealth);
+            animator.SetFloat("Health", statSystem.playerHealth);
+            //playerMovement.animator.SetFloat("Health", statSystem.playerHealth);
 
             // gameOverScreen.SetActive(true);
         }
