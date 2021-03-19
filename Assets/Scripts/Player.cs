@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     [Header("Mine UI System")]
     // [SerializeField] GameObject mineNumPrefab;  ------> IF WE ADD VISUAL SYSTEM WE WILL NEED THIS CODE 
     [SerializeField] TMP_Text oresCount;
+    
+    
+    [Header("Coin UI System")]
+    // [SerializeField] GameObject mineNumPrefab;  ------> IF WE ADD VISUAL SYSTEM WE WILL NEED THIS CODE 
+    [SerializeField] TMP_Text coinCount;
 
     private void Start()
     {
@@ -60,6 +65,7 @@ public class Player : MonoBehaviour
     private void TextUpdater()
     {
         oresCount.text = GameDataSaver.oreAmount.ToString();
+        coinCount.text = GameDataSaver.coinAmount.ToString();
 
     }
 

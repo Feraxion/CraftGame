@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class BuildUIDisplay : MonoBehaviour
+public class BuildUIDisplayStoneMine : MonoBehaviour
 {
     
     public StoneMillBuilding build;

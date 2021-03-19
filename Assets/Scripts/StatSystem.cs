@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class StatSystem : MonoBehaviour
 {
 
-    public float enemyHealth, playerHealth;
+    public float enemyHealth, playerHealth,maxPlayerHealth;
     public float enemyAttack, playerAttack;
     public float enemyDamage, PlayerDamage;
     public int coinDropAmount;
@@ -29,14 +29,26 @@ public class StatSystem : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (playerHealth >= maxPlayerHealth)
+        {
+            playerHealth = maxPlayerHealth;
+        }
+    }
+
 
     void CalculateStats()
     {
-        playerHealth = 10000 + (GameDataSaver.forgeHealthLevel * PlayerHealthModifier);
+        maxPlayerHealth = 100 + (GameDataSaver.forgeHealthLevel * PlayerHealthModifier);
+        playerHealth = maxPlayerHealth;
         playerAttack = 10 + (GameDataSaver.forgeAttackLevel * 5);
 
         enemyAttack = 10 + (GameDataSaver.forgeHealthLevel * 8);
         enemyHealth = 10 + (GameDataSaver.forgeAttackLevel * EnemyHealthModifier);
+        
+        PlayerDamage = Random.Range(playerAttack -5, playerAttack + 5);
+
 
         enemyDamage = Random.Range(enemyAttack -5, enemyAttack + 5);
         enemyHealth = Random.Range(enemyHealth -5, enemyHealth + 5);

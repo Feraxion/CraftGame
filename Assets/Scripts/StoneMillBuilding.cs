@@ -8,7 +8,7 @@ public class StoneMillBuilding : MonoBehaviour
 
     public int maxOreLimit;
     public float timer,timerMax;
-    public BuildUIDisplay buildUI;
+    public BuildUIDisplayStoneMine buildUI;
     
     public new string name;
     public string description;

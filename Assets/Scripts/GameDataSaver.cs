@@ -9,13 +9,14 @@ public class GameDataSaver : MonoBehaviour
     //OYUN BASINDA VARIABLELAR BURADAN ALINIYOR KAYIT EDILDI ISE, EDILMEDIYSE DEFAULT VALUE 0
     public static void GetData()
     {
-        oreAmount = PlayerPrefs.GetInt("oreAmount", 1);
+        oreAmount = PlayerPrefs.GetInt("oreAmount", 0);
         stoneMineLevel = PlayerPrefs.GetInt("stoneMineLevel", 1);
         currentZoneLevel = PlayerPrefs.GetInt("currentZoneLevel", 1);
         forgeAttackLevel = PlayerPrefs.GetInt("forgeAttackLevel", 1);
-        forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1000);
-        coinAmount = PlayerPrefs.GetInt("coinAmount", 1);
+        forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1);
+        coinAmount = PlayerPrefs.GetInt("coinAmount", 555);
         stoneMineStoredOreAmount = PlayerPrefs.GetInt("stoneMineStoredOreAmount", 1);
+        healingBuildingLevel = PlayerPrefs.GetInt("healingBuildingLevel", 1);
 
 
     }
@@ -38,6 +39,8 @@ public class GameDataSaver : MonoBehaviour
     public static int stoneMineLevel;
     public static int currentZoneLevel;
     public static int forgeAttackLevel,forgeHealthLevel;
+    public static int healingBuildingLevel;
+
     public static int oreAmount;
     public static int stoneMineStoredOreAmount;
 
@@ -66,6 +69,7 @@ public class GameDataSaver : MonoBehaviour
         PlayerPrefs.SetInt("forgeAttackLevel",forgeAttackLevel);
         PlayerPrefs.SetInt("forgeHealthLevel",forgeHealthLevel);
         PlayerPrefs.SetInt("stoneMineStoredOreAmount",stoneMineStoredOreAmount);
+        PlayerPrefs.SetInt("healingBuildingLevel",healingBuildingLevel);
 
 
         PlayerPrefs.Save();
