@@ -96,16 +96,13 @@ public class StoneMillBuilding : MonoBehaviour
     //Buttonlarin OnClickine atiyoruz
     public void UpgradeWithAd()
     {
-        if (GameDataSaver.coinAmount >= upgradeWithAdCost)
-        {
-            GameDataSaver.coinAmount -= upgradeWithAdCost;
+        
+            
             buildingLevel++;
             showAd = true;
-            Debug.Log("Upgrade Success");
+            Debug.Log("ad showed");
             
             CostCalculations();
-            
-        }else{Debug.Log("notEnoughCoin");}
         buildUI.UITextUpdater();
 
     }
