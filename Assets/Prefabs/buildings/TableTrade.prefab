@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8188459259417280303}
   - component: {fileID: 156360718038081661}
   - component: {fileID: 2352913188185463990}
+  - component: {fileID: 2485577585011005821}
   m_Layer: 0
   m_Name: TableTrade
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2485577585011005821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176355798156593629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034426395, y: 0.018343566, z: 0.019509044}
+  m_Center: {x: -7.745539e-15, y: 0.00010088937, z: 0.009713208}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2977263769561130665}
   - component: {fileID: 4703835831453017102}
   - component: {fileID: 5855255904247913526}
+  - component: {fileID: 1033110754502088813}
   m_Layer: 0
   m_Name: TableTowerUpgrade
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1033110754502088813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195620285093293591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05009325, y: 0.020204892, z: 0.017855281}
+  m_Center: {x: -0.007833426, y: 0.00022761551, z: 0.008886327}
