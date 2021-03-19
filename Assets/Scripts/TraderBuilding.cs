@@ -64,7 +64,7 @@ public class TraderBuilding : MonoBehaviour
     {
         if (GameDataSaver.oreAmount >= 1)
         {
-            GameDataSaver.coinAmount += tradeCost;
+            GameDataSaver.coinAmount += oreCost;
             GameDataSaver.oreAmount = 0;
 
             
@@ -79,7 +79,7 @@ public class TraderBuilding : MonoBehaviour
     {
         if (GameDataSaver.oreAmount >= 1)
         {
-            GameDataSaver.coinAmount += tradeCost / 2 ;
+            GameDataSaver.coinAmount += oreCost / 2 ;
             GameDataSaver.oreAmount = totalOre/2;
 
             
