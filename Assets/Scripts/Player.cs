@@ -165,6 +165,8 @@ public class Player : MonoBehaviour
 
                 Debug.Log("Player Atak");
                 animator.SetTrigger("Attack");
+                targetEnemy.GetComponent<EnemyAI>().health -= statSystem.PlayerDamage * 1000;
+                //statSystem.enemyHealth -= statSystem.PlayerDamage * 1000;
                 //ATTACK KODU PLAYER ICIN
                 // playerMovement.animator.SetBool("IsAttack",true);
             }

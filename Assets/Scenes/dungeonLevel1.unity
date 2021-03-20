@@ -1411,12 +1411,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d934f7284fd6d8242be0496d5a0f5e42, type: 3}
---- !u!4 &1125985074 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2999352460804991282, guid: 12cc5d8e660d25a448a60f1f22754fc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1982984270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140542323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1904,13 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1125985074}
+      objectReference: {fileID: 1610895659}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: CoinPrefab
+      value: 
+      objectReference: {fileID: 8878996034353665144, guid: b613bd96301a3ca4ebc7ee9515792df0,
+        type: 3}
     - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
       propertyPath: sightRange
@@ -1924,8 +1924,35 @@ PrefabInstance:
     - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
       propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: walkPointRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: timeBetweenAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8878996034353665144, guid: b613bd96301a3ca4ebc7ee9515792df0,
+        type: 3}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 9025529356072490580, guid: 4b8885480751c854fba8ab79ec6195b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12cc5d8e660d25a448a60f1f22754fc8, type: 3}
 --- !u!1 &1988503931 stripped
@@ -2466,6 +2493,12 @@ PrefabInstance:
       objectReference: {fileID: 1610895659}
     - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
         type: 3}
+      propertyPath: CoinPrefab
+      value: 
+      objectReference: {fileID: 9025529356072490580, guid: 4b8885480751c854fba8ab79ec6195b0,
+        type: 3}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
       propertyPath: sightRange
       value: 15
       objectReference: {fileID: 0}
@@ -2477,8 +2510,35 @@ PrefabInstance:
     - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
         type: 3}
       propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: walkPointRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: timeBetweenAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8878996034353665144, guid: b613bd96301a3ca4ebc7ee9515792df0,
+        type: 3}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 9025529356072490580, guid: 4b8885480751c854fba8ab79ec6195b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 946e84c2fb16bc7478120303cc8f4edb, type: 3}
 --- !u!1 &2139735043

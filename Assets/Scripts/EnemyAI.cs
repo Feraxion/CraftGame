@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     public float health;
     private float shootTimer;
     [SerializeField] private float shootTimerMax;
-    
+
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -33,15 +33,22 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    //Coin or health
+
+    //public GameObject[] lootPrefab;
+    int randLoot;
+    public GameObject CoinPrefab;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        health = statSystem.enemyHealth;
     }
 
     private void Update()
     {
-        health = statSystem.enemyHealth;
+
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -49,11 +56,18 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
-        
+
+        if (health <= 0)
+        {
+            EnemyDeath();
+            //animator.SetFloat("Health", 0);
+            //Destroy(this.gameObject, 5f);
+        }
+
         if (!playerInAttackRange)
         {
             animator.SetBool("IsAttack", false);
-            
+
         }
     }
 
@@ -97,8 +111,8 @@ public class EnemyAI : MonoBehaviour
     {
         agent.SetDestination(player.position);
         animator.SetFloat("Speed", 1);
-        
-       
+
+
     }
 
     private void AttackPlayer()
@@ -108,32 +122,29 @@ public class EnemyAI : MonoBehaviour
 
         transform.LookAt(player);
 
-        shootTimer -= Time.deltaTime;
-        if (shootTimer <= 0f)
+
+        if (playerInAttackRange)
         {
-            shootTimer += shootTimerMax;
-            if (playerInAttackRange)
+
+            if (!alreadyAttacked)
             {
-                //ATTACK KODU PLAYER ICIN
                 //playAnimation;
                 animator.SetBool("IsAttack", true);
-                //animator.Play("SwordAndShieldSlash");
+                //attack code
                 statSystem.playerHealth = statSystem.playerHealth - statSystem.enemyDamage;
                 Debug.Log("Atak yapıyor");
+                //End of the attack code
 
-
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
 
-        
+
+
 
         //TAKE ATTACK and HEALTH STATS FROM CHARACTER CLASS
 
-        
-        
-
-        
-        
         //if (!alreadyAttacked)
         //{
         //    ///Attack code here
@@ -147,6 +158,10 @@ public class EnemyAI : MonoBehaviour
         //}
 
     }
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
+    }
 
     private void TakeDamage()
     {
@@ -158,8 +173,24 @@ public class EnemyAI : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
-   
+    private void EnemyDeath()
+    {
+        animator.SetFloat("Health", 0);
+        //randLoot = Random.Range(0, 2);
+        //Instantiate(lootPrefab[randLoot], transform.position, transform.rotation);
+        DropCoin();
+        animator.SetFloat("Speed", 0);
+        agent.SetDestination(transform.position);
+        Destroy(this.gameObject, 3f);
+    }
+
+    private void DropCoin()
+    {
+        Vector3 position = transform.position;
+        GameObject coin = Instantiate(CoinPrefab, position + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
+        //coin.SetActive(true);
+    }
+
 
     private void OnDrawGizmosSelected()
     {
