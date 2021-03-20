@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
             // YAKINDAKI OBJELERDE YOKSA RANGE DISINDA ONCEDEN ALDIGI TARGETA TEKRAR DALMASIN 
             targetEnemy = null;
             targetOre = null;
-            playerMovement.animator.SetBool("IsAttack", false);
+            //playerMovement.animator.SetBool("IsAttack", false);
 
         }
     }
