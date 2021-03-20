@@ -14,7 +14,7 @@ public class GameDataSaver : MonoBehaviour
         currentZoneLevel = PlayerPrefs.GetInt("currentZoneLevel", 1);
         forgeAttackLevel = PlayerPrefs.GetInt("forgeAttackLevel", 1);
         forgeHealthLevel = PlayerPrefs.GetInt("forgeHealthLevel", 1);
-        coinAmount = PlayerPrefs.GetInt("coinAmount", 555);
+        coinAmount = PlayerPrefs.GetInt("coinAmount", 500);
         stoneMineStoredOreAmount = PlayerPrefs.GetInt("stoneMineStoredOreAmount", 1);
         healingBuildingLevel = PlayerPrefs.GetInt("healingBuildingLevel", 1);
 
@@ -62,7 +62,6 @@ public class GameDataSaver : MonoBehaviour
     {
         //Yeni variablelar burada kaydediliyor
         PlayerPrefs.SetInt("coinAmount",coinAmount);
-
         PlayerPrefs.SetInt("oreAmount",oreAmount);
         PlayerPrefs.SetInt("stoneMineLevel",stoneMineLevel);
         PlayerPrefs.SetInt("currentZoneLevel",currentZoneLevel);
@@ -74,8 +73,18 @@ public class GameDataSaver : MonoBehaviour
 
         PlayerPrefs.Save();
         
-    }    
-    
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveData();
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        SaveData();
+    }
+
 
     // Update is called once per frame
     void Update()
