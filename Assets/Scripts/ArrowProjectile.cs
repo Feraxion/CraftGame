@@ -13,13 +13,13 @@ public class ArrowProjectile : MonoBehaviour {
         return arrowProjectile;
     }
 
-   
-       
+
 
 
     private Enemy targetEnemy;
     private Vector3 lastMoveDir;
     private float timeToDie = 4f;
+
 
     private void Update() {
         Vector3 moveDir;
@@ -47,12 +47,13 @@ public class ArrowProjectile : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other)
-    {////////////////////CALISMIYO AMK NIYE////////////////////////////
-        Debug.Log("aq");
+    {////////////////////////////////////////////////
+        Debug.Log("vuruldu");
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null) {
             // Hit an enemy!
             //int damageAmount = 10;
+            enemy.GetComponent<EnemyAI>().health -= 30;
             //enemy.GetComponent<HealthSystem>().Damage(damageAmount);
 
             Destroy(this.gameObject);
@@ -60,10 +61,11 @@ public class ArrowProjectile : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider collision) {
-        Debug.Log("aq");
+        Debug.Log("Hasar vuruldu");
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy != null) {
             // Hit an enemy!
+            enemy.GetComponent<EnemyAI>().health -= 50;
             //int damageAmount = 10;
             //enemy.GetComponent<HealthSystem>().Damage(damageAmount);
 

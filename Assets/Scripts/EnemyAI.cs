@@ -75,6 +75,8 @@ public class EnemyAI : MonoBehaviour
         {
             playerAlive = false;
             animator.SetBool("IsAttack", false);
+            agent.SetDestination(transform.position);
+            animator.SetFloat("Speed", 0);
 
         }
         

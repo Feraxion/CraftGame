@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4997100112100722874}
   - component: {fileID: 6594095713418922950}
   - component: {fileID: 9057265764348588544}
+  - component: {fileID: 5183804375675396201}
   m_Layer: 0
   m_Name: SilverShattered.001
   m_TagString: ShatteredOre
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265501430948413250}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.0333111, y: 0.6080136, z: 0.7726097}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.0333111, y: 1.24, z: 0.7726097}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5325987665569232057}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &713894840612911577
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89,13 +90,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265501430948413250}
   serializedVersion: 2
-  m_Mass: 0.001
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!64 &9057265764348588544
 MeshCollider:
@@ -106,11 +107,24 @@ MeshCollider:
   m_GameObject: {fileID: 1265501430948413250}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4454444582380330732, guid: 81e49b1d62b01d1468cfe53686c7c641, type: 3}
+--- !u!65 &5183804375675396201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265501430948413250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013418476, y: 0.0107292915, z: 0.011905647}
+  m_Center: {x: 0.00036690943, y: -0.0005737281, z: -0.000026508007}
 --- !u!1 &3348226943160438355
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +138,7 @@ GameObject:
   - component: {fileID: 1841241839364832492}
   - component: {fileID: 7553819536625601629}
   - component: {fileID: 5554737492943995695}
+  - component: {fileID: 3868503626398375415}
   m_Layer: 0
   m_Name: SilverShattered
   m_TagString: ShatteredOre
@@ -138,13 +153,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3348226943160438355}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.5921255, y: 0.5438409, z: 0.5178566}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.5921255, y: 1.1758273, z: 0.5178566}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5325987665569232057}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4626683065165009943
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -200,13 +215,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3348226943160438355}
   serializedVersion: 2
-  m_Mass: 0.001
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!64 &5554737492943995695
 MeshCollider:
@@ -217,11 +232,24 @@ MeshCollider:
   m_GameObject: {fileID: 3348226943160438355}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1001495405749218311, guid: 81e49b1d62b01d1468cfe53686c7c641, type: 3}
+--- !u!65 &3868503626398375415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348226943160438355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008532951, y: 0.008927455, z: 0.0116265165}
+  m_Center: {x: -0.00053026876, y: -0.000050470244, z: 0.00027859287}
 --- !u!1 &4897452355536951830
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +263,7 @@ GameObject:
   - component: {fileID: 3399302834357967131}
   - component: {fileID: 660955989741847012}
   - component: {fileID: 6198993458140397472}
+  - component: {fileID: 1559511576200216162}
   m_Layer: 0
   m_Name: SilverShattered.002
   m_TagString: ShatteredOre
@@ -249,13 +278,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4897452355536951830}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.1496034, y: 0.56279874, z: 0.17985535}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.1496034, y: 1.1947851, z: 0.17985535}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5325987665569232057}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8553946740233328940
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -311,13 +340,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4897452355536951830}
   serializedVersion: 2
-  m_Mass: 0.001
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!64 &6198993458140397472
 MeshCollider:
@@ -328,11 +357,24 @@ MeshCollider:
   m_GameObject: {fileID: 4897452355536951830}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2620738818510191201, guid: 81e49b1d62b01d1468cfe53686c7c641, type: 3}
+--- !u!65 &1559511576200216162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897452355536951830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012176143, y: 0.010116312, z: 0.012304319}
+  m_Center: {x: 0.00004226365, y: 0.0009065592, z: 0.00050295994}
 --- !u!1 &8023494100763567136
 GameObject:
   m_ObjectHideFlags: 0
