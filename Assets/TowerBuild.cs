@@ -23,11 +23,11 @@ public class TowerBuild : MonoBehaviour
 
     public void BuildTower()
     {
-        if (GameDataSaver.oreAmount > 50)
+        if (GameDataSaver.oreAmount >= 50)
         {
             GameDataSaver.oreAmount -= 50;
             isBuilt = true;
-            Instantiate(GameAssets.Instance.pfArrowTower, gameObject.transform.position, new Quaternion(0f,-180f,0f,0f));
+            Instantiate(GameAssets.Instance.pfArrowTower, gameObject.transform.position, new Quaternion(0f,0f,0f,0f));
             TowerUI.SetActive(false);
 
         }else {Debug.Log("Failed to build");}

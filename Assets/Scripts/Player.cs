@@ -196,7 +196,7 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.CompareTag("ShatteredOre"))
         {
-            GameDataSaver.oreAmount++;
+            GameDataSaver.oreAmount+=10;
             Destroy(col.gameObject);
             Debug.Log("Getting Mine");
             //oresCount.text = GameDataSaver.oreAmount.ToString();
