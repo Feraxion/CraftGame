@@ -1920,6 +1920,23 @@ PrefabInstance:
       propertyPath: attackRange
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8878996034353665144, guid: b613bd96301a3ca4ebc7ee9515792df0,
+        type: 3}
+    - target: {fileID: 3320681618849122825, guid: 12cc5d8e660d25a448a60f1f22754fc8,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 9025529356072490580, guid: 4b8885480751c854fba8ab79ec6195b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12cc5d8e660d25a448a60f1f22754fc8, type: 3}
 --- !u!1 &1988503931 stripped
@@ -2478,6 +2495,23 @@ PrefabInstance:
       propertyPath: timeBetweenAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8878996034353665144, guid: b613bd96301a3ca4ebc7ee9515792df0,
+        type: 3}
+    - target: {fileID: 3320681618849122825, guid: 946e84c2fb16bc7478120303cc8f4edb,
+        type: 3}
+      propertyPath: lootPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 9025529356072490580, guid: 4b8885480751c854fba8ab79ec6195b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 946e84c2fb16bc7478120303cc8f4edb, type: 3}
 --- !u!1 &2139735043
