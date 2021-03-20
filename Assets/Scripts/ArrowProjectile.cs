@@ -6,14 +6,15 @@ using UnityEngine;
 public class ArrowProjectile : MonoBehaviour {
 
     public static ArrowProjectile Create(Vector3 position, Enemy enemy) {
-        Transform arrowTransform = Instantiate(GameAssets.Instance.pfArrowProjectile, position, Quaternion.identity);
-
+        Transform arrowTransform = Instantiate(GameAssets.Instance.pfArrowProjectile, position,Quaternion.Euler(-45,0,0)) ;
         ArrowProjectile arrowProjectile = arrowTransform.GetComponent<ArrowProjectile>();
         arrowProjectile.SetTarget(enemy);
 
         return arrowProjectile;
     }
 
+   
+       
 
 
     private Enemy targetEnemy;
@@ -54,7 +55,7 @@ public class ArrowProjectile : MonoBehaviour {
             //int damageAmount = 10;
             //enemy.GetComponent<HealthSystem>().Damage(damageAmount);
 
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }    
     }
 
@@ -66,7 +67,7 @@ public class ArrowProjectile : MonoBehaviour {
             //int damageAmount = 10;
             //enemy.GetComponent<HealthSystem>().Damage(damageAmount);
 
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 

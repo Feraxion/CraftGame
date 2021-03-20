@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bfcc32e223b6545a6877ce1851e7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfArrowProjectile: {fileID: 2847027037864579955, guid: f8c67fc093eb20441a910878c94401c8,
+  pfArrowProjectile: {fileID: 3441096353497368668, guid: 33d6958f020d67a4f9b3f1c03ad3dc31,
     type: 3}
   pfCannonProjectile: {fileID: 2847027037864579955, guid: f2a143e2568022b4693c52df4f579e33,
     type: 3}
   pfEnemy: {fileID: 2847027037864579955, guid: c724dbe1bec9e28499048cb88dcaf1b4, type: 3}
+  pfArrowTower: {fileID: 3946027532485775897, guid: e82821d5857d8f24caefc3eeb3e3a766,
+    type: 3}
