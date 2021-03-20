@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/baseLevel.unity
     guid: ce17679e696d8cf4b9c6d23d3451c71c
+  - enabled: 1
+    path: Assets/Scenes/dungeonLevel1.unity
+    guid: f5c6be6a98cc311498b93df452469236
   m_configObjects: {}
