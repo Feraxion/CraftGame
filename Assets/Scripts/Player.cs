@@ -202,6 +202,18 @@ public class Player : MonoBehaviour
             //oresCount.text = GameDataSaver.oreAmount.ToString();
             //Adding mine visual system
         }
+        if (col.gameObject.CompareTag("CoinObj"))
+        {
+            int coinRange = Random.Range(0, 10);
+            GameDataSaver.coinAmount += coinRange;
+            TextUpdater();
+            Destroy(col.gameObject);
+        }
+        if (col.gameObject.CompareTag("HealthObj"))
+        {
+            statSystem.playerHealth += 50;
+            Destroy(col.gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -8,6 +8,8 @@ TagManager:
   - DataSaver
   - Ore
   - ShatteredOre
+  - HealthObj
+  - CoinObj
   layers:
   - Default
   - TransparentFX
