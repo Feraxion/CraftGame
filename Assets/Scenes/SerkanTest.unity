@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2055,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 169371581, guid: 027f6893ee51b1d44a1c26e3d5dfbf15, type: 3}
       propertyPath: shatteredVersion
       value: 
-      objectReference: {fileID: 1150524355282178908, guid: a52a188020c644145a52139c282aceb9,
+      objectReference: {fileID: 8023494100763567136, guid: ff39e093de38e1a48a6f3532fd667cca,
         type: 3}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
@@ -2065,32 +2065,32 @@ PrefabInstance:
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 145.95041
+      value: 303.3725
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 117.05999
+      value: 243.32089
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 117.05999
+      value: 243.32089
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.603111
+      value: -7.5478
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00021189451
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.59123
+      value: 11.53
       objectReference: {fileID: 0}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}
@@ -7005,7 +7005,7 @@ PrefabInstance:
     - target: {fileID: 2999352460804991282, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.718437
+      value: 58.48
       objectReference: {fileID: 0}
     - target: {fileID: 2999352460804991282, guid: 12cc5d8e660d25a448a60f1f22754fc8,
         type: 3}
@@ -7118,6 +7118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   animator: {fileID: 5169735537352930554}
+  playerIsAlive: 0
   shootTimerMax: 1
   statSystem: {fileID: 763774400}
   health: 0
