@@ -35,8 +35,9 @@ public class EnemyAI : MonoBehaviour
 
     //Coin or health
 
-    public GameObject[] lootPrefab;
+    //public GameObject[] lootPrefab;
     int randLoot;
+    public GameObject CoinPrefab;
 
     private void Awake()
     {
@@ -175,9 +176,19 @@ public class EnemyAI : MonoBehaviour
     private void EnemyDeath()
     {
         animator.SetFloat("Health", 0);
-        randLoot = Random.Range(0, 2);
-        Instantiate(lootPrefab[randLoot], transform.position, transform.rotation);
-        Destroy(this.gameObject, 5f);
+        //randLoot = Random.Range(0, 2);
+        //Instantiate(lootPrefab[randLoot], transform.position, transform.rotation);
+        DropCoin();
+        animator.SetFloat("Speed", 0);
+        agent.SetDestination(transform.position);
+        Destroy(this.gameObject, 3f);
+    }
+
+    private void DropCoin()
+    {
+        Vector3 position = transform.position;
+        GameObject coin = Instantiate(CoinPrefab, position + new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
+        //coin.SetActive(true);
     }
 
 
