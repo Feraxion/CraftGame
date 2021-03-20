@@ -19,6 +19,9 @@ public class EnemyAI : MonoBehaviour
     public float health;
     private float shootTimer;
     [SerializeField] private float shootTimerMax;
+    public bool enemyIsAlive;
+    public bool playerAlive;
+
 
     //Patroling
     public Vector3 walkPoint;
@@ -44,6 +47,8 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         health = statSystem.enemyHealth;
+        enemyIsAlive = true;
+        playerAlive = true;
     }
 
     private void Update()
@@ -53,22 +58,42 @@ public class EnemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
-        if (health <= 0)
+        
+        if (enemyIsAlive)
         {
-            EnemyDeath();
-            //animator.SetFloat("Health", 0);
-            //Destroy(this.gameObject, 5f);
+            if (health <= 0)
+            {
+                enemyIsAlive = false;
+                EnemyDeath();
+                //animator.SetFloat("Health", 0);
+                //Destroy(this.gameObject, 5f);
+            }
         }
+
+        if (!player.GetComponentInChildren<Player>().playerIsAlive)
+        {
+            playerAlive = false;
+            animator.SetBool("IsAttack", false);
+
+        }
+        
 
         if (!playerInAttackRange)
         {
             animator.SetBool("IsAttack", false);
 
         }
+        
+        if (playerAlive)
+        {
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        }
+        
+
+        
     }
 
     //private void OnCollisionEnter(Collision other)
@@ -175,6 +200,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void EnemyDeath()
     {
+        
         animator.SetFloat("Health", 0);
         //randLoot = Random.Range(0, 2);
         //Instantiate(lootPrefab[randLoot], transform.position, transform.rotation);

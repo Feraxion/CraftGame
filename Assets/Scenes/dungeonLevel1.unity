@@ -2670,6 +2670,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   animator: {fileID: 5169735537352930554}
+  playerIsAlive: 0
   shootTimerMax: 1
   statSystem: {fileID: 763774400}
   health: 100

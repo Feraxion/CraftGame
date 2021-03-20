@@ -2055,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 169371581, guid: 027f6893ee51b1d44a1c26e3d5dfbf15, type: 3}
       propertyPath: shatteredVersion
       value: 
-      objectReference: {fileID: 8648327031292746416, guid: b8010d6ef525bf746b96d0336d89b6be,
+      objectReference: {fileID: 1150524355282178908, guid: a52a188020c644145a52139c282aceb9,
         type: 3}
     - target: {fileID: 3996082048132322280, guid: 027f6893ee51b1d44a1c26e3d5dfbf15,
         type: 3}

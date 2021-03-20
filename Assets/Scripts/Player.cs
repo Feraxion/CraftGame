@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public LayerMask whatIsEnemy;
     public Animator animator;
+    public bool playerIsAlive;
 
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = .2f;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     {
         InvokeRepeating("TextUpdater", 1, 0.3F);
         playerMovement = gameObject.GetComponent<PlayerMovement>();
+        playerIsAlive = true;
     }
 
 
@@ -49,17 +51,24 @@ public class Player : MonoBehaviour
         //statSystem.playerHealth = health;
         health = statSystem.playerHealth;
 
-        HandleTargeting();
-        HandleShooting();
+        
 
 
         if (statSystem.playerHealth <= 0)
         {
+            playerIsAlive = false;
             statSystem.playerHealth = 0;
             animator.SetFloat("Health", statSystem.playerHealth);
             //playerMovement.animator.SetFloat("Health", statSystem.playerHealth);
-
+            playerMovement.enabled = false;
             // gameOverScreen.SetActive(true);
+        }
+
+        if (statSystem.playerHealth > 0)
+        {
+            playerIsAlive = true;
+            HandleTargeting();
+            HandleShooting();
         }
     }
 

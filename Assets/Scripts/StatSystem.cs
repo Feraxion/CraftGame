@@ -44,7 +44,7 @@ public class StatSystem : MonoBehaviour
         playerHealth = maxPlayerHealth;
         playerAttack = 10 + (GameDataSaver.forgeAttackLevel * 5);
 
-        enemyAttack = 10 + (GameDataSaver.forgeHealthLevel * 8);
+        enemyAttack = 3 + (GameDataSaver.forgeHealthLevel * 8);
         enemyHealth = 10 + (GameDataSaver.forgeAttackLevel * EnemyHealthModifier);
         
         PlayerDamage = Random.Range(playerAttack -5, playerAttack + 5);
