@@ -31,6 +31,5 @@ public class BuildingUIDisplayHealingBuild : MonoBehaviour
         descriptionText.text = build.description;
         coinCostButtonText.text = $"{build.upgradeCost} Coin";
         buildingLevelText.text = $"Level {build.buildingLevel}";
-        
     }
 }
