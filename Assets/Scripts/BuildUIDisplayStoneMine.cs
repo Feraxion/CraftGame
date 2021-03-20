@@ -25,7 +25,7 @@ public class BuildUIDisplayStoneMine : MonoBehaviour
         descriptionText.text = build.description;
         ProductionPerMinText.text = $"Production Per Minute: {build.productionPerMin}";
         coinCostButtonText.text = $"{build.upgradeCost} Coin";
-        adButtonText.text = $"Watch Ad";
+        adButtonText.text = $"";
         buildingLevelText.text = $"Level {build.buildingLevel}";
         
         //Startta updatelenmeyebiliyor bazen ondan 4 saniye sonra safe cagiriyorum zaten upgradeleyince herhangi bir buildi cagiriyor bunu ve CostCalculationsi
@@ -38,7 +38,7 @@ public class BuildUIDisplayStoneMine : MonoBehaviour
         descriptionText.text = build.description;
         ProductionPerMinText.text = $"Production Per Minute: {build.productionPerMin}";
         coinCostButtonText.text = $"{build.upgradeCost} Coin";
-        adButtonText.text = $"Watch Ad";
+        adButtonText.text = $"";
         buildingLevelText.text = $"Level {build.buildingLevel}";
         
     }

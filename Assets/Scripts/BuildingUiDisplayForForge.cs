@@ -37,7 +37,7 @@ public class BuildingUiDisplayForForge : MonoBehaviour
         nameText.text = build.name;
         descriptionText.text = build.description;
         buildingLevelText.text = $"Level {build.buildingLevel}";
-        costAttackUpgradeText.text = $"{build.costForAttackUpgrade}";
-        costHealthUpgradeText.text = $"{build.costForHealthUpgrade}";
+        costAttackUpgradeText.text = $"{build.costForAttackUpgrade} Coin";
+        costHealthUpgradeText.text = $"{build.costForHealthUpgrade} Coin";
     }
 }
