@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(startWait);
 
-        while(enemyCount <= 10)
+        while(enemyCount <= 8)
         {
             randEnemy = Random.Range(0, 2);
             Vector3 spawnPosition = transform.position;
